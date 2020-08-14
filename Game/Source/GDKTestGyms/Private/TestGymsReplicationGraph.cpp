@@ -52,6 +52,7 @@ void InitClassReplicationInfo(FClassReplicationInfo& Info, UClass* Class, bool b
 		NativeClass = NativeClass->GetSuperClass();
 	}
 
+	Info.StarvationPriorityScale = 2;
 	UE_LOG(LogTestGymsReplicationGraph, Log, TEXT("Setting replication period for %s (%s) to %d frames (%.2f)"), *Class->GetName(), *NativeClass->GetName(), Info.ReplicationPeriodFrame, CDO->NetUpdateFrequency);
 }
 
